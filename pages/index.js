@@ -1,16 +1,10 @@
-import Head from 'next/head';
-
-import Link from "next/link";
-import Nav from "../components/nav";
-
 import home_styles from '../styles/Home.module.css';
 
 const Home = () => {
 	return (
 		<div className={home_styles}>
-			<Nav />
 			<h1>Welcome to next.js</h1>
-			<Link href="/hello">This is the hello page</Link>
+			{/* <img alt="thing" src={`/img/56tctu.jpg`} width={1080} height={720}/> */}
 		</div>
 	);
 };

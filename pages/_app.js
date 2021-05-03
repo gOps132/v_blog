@@ -1,8 +1,17 @@
-import "../styles/globals.css";
 // import App from 'next/app'
 
+import "../styles/globals.css";
+import Nav from "../components/nav";
+
 function MyApp({ Component, pageProps }) {
-	return <Component {...pageProps} />
+	return (
+		<>
+			<Nav/>
+			<main>
+				<Component {...pageProps} />
+			</main>
+		</>
+	)
 }
 
 // Only uncomment this method if you have blocking data requirements for
