@@ -1,16 +1,29 @@
 // import App from 'next/app'
 
 import "../styles/globals.css";
+import Theme from "../styles/Theme.module.css";
+
 import Nav from "../components/nav";
 
+import React, {useState} from "react";
+
+
 function MyApp({ Component, pageProps }) {
+	const theme_map = {
+		dark: 'light',
+		light: 'solar',
+		solar: 'dark'
+	};
+
+	let [ currentTheme, useCurrentTheme ] = useState(theme_map.light);
+
 	return (
-		<>
+		<div className={currentTheme}>
 			<Nav/>
 			<main>
 				<Component {...pageProps} />
 			</main>
-		</>
+		</div>
 	)
 }
 
