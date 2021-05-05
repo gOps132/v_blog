@@ -27,10 +27,11 @@ function MyApp({ Component, pageProps }) {
 
 	return (
 		<div className={currentTheme}>
-
-			<Nav theme={currentTheme} theme_callback={toggle_theme}/>
+			<Nav theme_callback={toggle_theme}/>
 			<main>
-				<Component {...pageProps} />
+				<article>
+					<Component {...pageProps} />
+				</article>
 			</main>
 		</div>
 	)
