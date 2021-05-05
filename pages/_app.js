@@ -18,17 +18,16 @@ function MyApp({ Component, pageProps }) {
 
 	const toggle_theme = useCallback(() => {
 		useTheme(theme_map[currentTheme]);
-		console.log("working??");
 	});
 
 	return (
 		<div className={currentTheme}>
 			<Nav theme={currentTheme} theme_callback={toggle_theme}/>
 			<main>
+			</main>
 				<article>
 					<Component {...pageProps} />
 				</article>
-			</main>
 		</div>
 	)
 }

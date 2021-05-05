@@ -97,7 +97,7 @@
 }
 
 /* possible gets removed during compile time? */
-.dark #darkIcon {
+/* .dark #darkIcon {
 	display: block;
 }
 
@@ -107,7 +107,7 @@
 
 .solar #solarIcon {
 	display: block;
-}
+} */
 
 /* Small screens */
 @media only screen and (max-width: 600px) {
