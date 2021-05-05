@@ -97,18 +97,17 @@
 }
 
 /* possible gets removed during compile time? */
+/* .dark .darkIcon {
+	display: block;
+} */
 
-.dark #darkIcon {
+/* .light .lightIcon {
 	display: block;
 }
 
-.light #lightIcon {
+.solar .solarIcon {
 	display: block;
-}
-
-.solar #solarIcon {
-	display: block;
-}
+} */
 
 /* Small screens */
 @media only screen and (max-width: 600px) {

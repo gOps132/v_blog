@@ -23,10 +23,12 @@ function MyApp({ Component, pageProps }) {
 		console.log("working??");
 	});
 
+	// add and remove the css
+
 	return (
 		<div className={currentTheme}>
-			{/* pass a lambda callback here? */}
-			<Nav theme={currentTheme} />
+
+			<Nav theme={currentTheme} theme_callback={toggle_theme}/>
 			<main>
 				<Component {...pageProps} />
 			</main>
