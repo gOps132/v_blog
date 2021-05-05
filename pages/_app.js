@@ -13,21 +13,17 @@ function MyApp({ Component, pageProps }) {
 		solar: 'dark'
 	};
 
-	// don't use useState?
 	let [currentTheme, useTheme] = useState(
 		(Object.keys(theme_map)[0])) ;
 
-	// FIXME: fix infinite loop problem
 	const toggle_theme = useCallback(() => {
 		useTheme(theme_map[currentTheme]);
 		console.log("working??");
 	});
 
-	// add and remove the css
-
 	return (
 		<div className={currentTheme}>
-			<Nav theme_callback={toggle_theme}/>
+			<Nav theme={currentTheme} theme_callback={toggle_theme}/>
 			<main>
 				<article>
 					<Component {...pageProps} />

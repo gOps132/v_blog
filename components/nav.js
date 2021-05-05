@@ -40,7 +40,7 @@ const Nav = (props) => {
 				</li>
 
 				<li className={nav_styles.nav_item}>
-					<a className={nav_styles.nav_link} onClick={()=>{ props.theme_callback() }}>
+					<a className={nav_styles.nav_link} onClick={()=>{props.theme_callback();}}>
 						<svg className={nav_styles.theme_icon} id="darkIcon" aria-hidden="true" focusable="false" data-prefix="fad"
 							data-icon="moon-stars" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
 							className="svg-inline--fa fa-moon-stars fa-w-16 fa-7x">

@@ -93,21 +93,21 @@
 }
 
 .theme_icon {
-	display: none;
+	visibility: hidden;
 }
 
 /* possible gets removed during compile time? */
-/* .dark .darkIcon {
-	display: block;
-} */
-
-/* .light .lightIcon {
+.dark #darkIcon {
 	display: block;
 }
 
-.solar .solarIcon {
+.light #lightIcon {
 	display: block;
-} */
+}
+
+.solar #solarIcon {
+	display: block;
+}
 
 /* Small screens */
 @media only screen and (max-width: 600px) {
