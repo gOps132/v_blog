@@ -3,6 +3,7 @@
 import "../styles/globals.css";
 
 import Nav from "../components/nav";
+import Footer from "../components/footer";
 
 import React, { useState, useCallback } from "react";
 
@@ -14,7 +15,7 @@ function MyApp({ Component, pageProps }) {
 	};
 
 	let [currentTheme, useTheme] = useState(
-		(Object.keys(theme_map)[0])) ;
+		(Object.keys(theme_map)[0]));
 
 	const toggle_theme = useCallback(() => {
 		useTheme(theme_map[currentTheme]);
@@ -22,11 +23,12 @@ function MyApp({ Component, pageProps }) {
 
 	return (
 		<div className={currentTheme}>
-			<Nav theme={currentTheme} theme_callback={toggle_theme} theme_map={theme_map}/>
+			<Nav theme={currentTheme} theme_callback={toggle_theme} theme_map={theme_map} />
 			<main></main>
-				<article>
-					<Component {...pageProps} />
-				</article>
+			<article>
+				<Component {...pageProps} />
+			</article>
+			<Footer/>
 		</div>
 	)
 }

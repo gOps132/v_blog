@@ -1,4 +1,41 @@
+.main_div {
+	padding: 1rem;
+	background-color: var(--bg-secondary);	
+}
 
-.main_div > h1 {
-    margin-top: 1rem;
+.main_profile {
+	display: flex;
+}
+
+.main_profile > * {
+	margin: 1rem;
+}
+
+.profile_holder {
+	display: flex;
+	
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+
+	align-items: center;
+	justify-content: center;
+
+	background-color: var(--bg-primary);
+	/* transition: var(--transition-speed); */
+}
+
+/* .profile_holder:hover {
+	box-shadow: 0.5rem 0 1rem 1rem var(--bg-primary);
+} */
+
+.user {
+	display: inline-block;
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+
+	background-repeat: no-repeat;
+	background-position: center center;
+	/* background-size: cover; */
 }
