@@ -17,9 +17,7 @@ function MyApp({ Component, pageProps }) {
 		(Object.keys(theme_map)[0])) ;
 
 	const toggle_theme = useCallback(() => {
-		let tmp = theme_map[currentTheme]
-		useTheme(tmp);
-		return tmp;
+		useTheme(theme_map[currentTheme]);
 	});
 
 	return (
