@@ -13,7 +13,9 @@ function MyApp({ Component, pageProps }) {
 		solar: 'dark'
 	};
 
-	let [currentTheme, useTheme] = useState((Object.keys(theme_map)[0])) ;
+	// don't use useState?
+	let [currentTheme, useTheme] = useState(
+		(Object.keys(theme_map)[0])) ;
 
 	// FIXME: fix infinite loop problem
 	const toggle_theme = useCallback(() => {

@@ -1,14 +1,7 @@
 import nav_styles from "../styles/Nav.module.css";
 import React from "react";
 
-// import dynamic from "next/dynamic";
 import Link from "next/link";
-
-// const Theme = dynamic(() => {
-// 	return import('./theme.js')
-// }, {
-// 	ssr: false
-// })
 
 const Nav = (props) => {
 	return (
