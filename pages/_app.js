@@ -1,12 +1,10 @@
 // import App from 'next/app'
 
 import "../styles/globals.css";
-import Theme from "../styles/Theme.module.css";
 
 import Nav from "../components/nav";
 
-import React, {useState} from "react";
-
+import React, { useState, useCallback } from "react";
 
 function MyApp({ Component, pageProps }) {
 	const theme_map = {
@@ -15,11 +13,18 @@ function MyApp({ Component, pageProps }) {
 		solar: 'dark'
 	};
 
-	let [ currentTheme, useCurrentTheme ] = useState(theme_map.light);
+	let [currentTheme, useTheme] = useState((Object.keys(theme_map)[0])) ;
+
+	// FIXME: fix infinite loop problem
+	const toggle_theme = useCallback(() => {
+		useTheme(theme_map[currentTheme]);
+		console.log("working??");
+	});
 
 	return (
 		<div className={currentTheme}>
-			<Nav/>
+			{/* pass a lambda callback here? */}
+			<Nav theme={currentTheme} />
 			<main>
 				<Component {...pageProps} />
 			</main>

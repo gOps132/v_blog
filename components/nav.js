@@ -1,7 +1,7 @@
 import nav_styles from "../styles/Nav.module.css";
 import React from "react";
 
-import dynamic from "next/dynamic";
+// import dynamic from "next/dynamic";
 import Link from "next/link";
 
 // const Theme = dynamic(() => {
@@ -10,7 +10,7 @@ import Link from "next/link";
 // 	ssr: false
 // })
 
-const Nav = () => {
+const Nav = (props) => {
 	return (
 		<nav className={nav_styles.navbar}>
 			<ul className={nav_styles.navbar_nav}>
@@ -46,9 +46,8 @@ const Nav = () => {
 				</li>
 
 				<li className={nav_styles.nav_item}>
-					{/* <Theme> */}
 						<a className={nav_styles.nav_link}>
-							<svg className="theme-icon" id="darkIcon" aria-hidden="true" focusable="false" data-prefix="fad"
+							<svg className={`theme-icon`, props.theme} id="darkIcon" aria-hidden="true" focusable="false" data-prefix="fad"
 								data-icon="moon-stars" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
 								className="svg-inline--fa fa-moon-stars fa-w-16 fa-7x">
 								<g className={nav_styles}>
@@ -60,7 +59,7 @@ const Nav = () => {
 										className={nav_styles.fa_primary}></path>
 								</g>
 							</svg>
-							<svg className="theme-icon" id="solarIcon" aria-hidden="true" focusable="false" data-prefix="fad"
+							<svg className={`theme-icon`, props.theme} id="solarIcon" aria-hidden="true" focusable="false" data-prefix="fad"
 								data-icon="sun" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
 								className="svg-inline--fa fa-sun fa-w-16 fa-7x">
 								<g className={nav_styles}>
@@ -71,7 +70,7 @@ const Nav = () => {
 										className={nav_styles.fa_primary}></path>
 								</g>
 							</svg>
-							<svg className="theme-icon" id="lightIcon" aria-hidden="true" focusable="false" data-prefix="fad"
+							<svg className={`theme-icon`, props.theme} id="lightIcon" aria-hidden="true" focusable="false" data-prefix="fad"
 								data-icon="sunglasses" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"
 								className="svg-inline--fa fa-sunglasses fa-w-18 fa-7x">
 								<g className={nav_styles}>
@@ -85,7 +84,6 @@ const Nav = () => {
 							</svg>
 							<span className={nav_styles.link_text}>Themify</span>
 						</a>
-					{/* </Theme> */}
 				</li>
 			</ul>
 		</nav>
