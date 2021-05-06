@@ -5,6 +5,7 @@ import Link from "next/link";
 
 import HouseIcon from "../public/svg/house-user-solid.svg";
 import HandPeaceIcon from "../public/svg/hand-peace-solid.svg";
+import GithubBrandIcon from "../public/svg/github-brands.svg";
 
 const Nav = ({ theme, theme_callback, theme_map }) => {
 	const GetThemeType = () => {
@@ -49,6 +50,14 @@ const Nav = ({ theme, theme_callback, theme_map }) => {
 					<Link href="/hello"><a className={nav_styles.nav_link}>
 						<HandPeaceIcon/>
 						<span className={nav_styles.link_text}>Hello</span>
+					</a>
+					</Link>
+				</li>
+
+				<li className={nav_styles.nav_item}>
+					<Link href="https://github.com/gOps132/pt_4th_qtr_epilan"><a className={nav_styles.nav_link}>
+						<GithubBrandIcon/>
+						<span className={nav_styles.link_text}>Repo</span>
 					</a>
 					</Link>
 				</li>
