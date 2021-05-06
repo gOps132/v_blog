@@ -9,12 +9,13 @@ const Memes = (props) => {
 			<div>
 				{
 					props.main_obj.files.map(i => {
-						console.log(`filename: /img/memes/${i.filename}, width: ${i.width}, height: ${i.height}`);
-
 						return <img key={i.filename} src={`/img/memes/${i.filename}`} />
 					})
 				}
-				{/* {console.log(props.main_obj)} */}
+				{
+					// DEBUG
+					console.log(props.main_obj)
+				}
 			</div>
 		</div>
 	);
@@ -32,16 +33,22 @@ export async function getStaticProps() {
 			height: 0,
 		});
 	}
-	for (let i = 0; i < image_names.length; i++) {
+	// FIXME: This does not change the object value
+	for (let i = 0; i < img_obj.files.length; i++) {
 		try {
 			sizeOf(`public/img/memes/${img_obj.files[i].filename}`, (err, dimensions) => {
 				console.log(`dimensions of ${img_obj.files[i].filename}: ` + `width: ${dimensions.width}`, `height: ${dimensions.height}`);
-				img_obj.files[i].width = (dimensions.width);
-				img_obj.files[i].height = (dimensions.height);
+				img_obj.files[i].width = dimensions.width;
+				img_obj.files[i].height = dimensions.height;
 			});
-			console.log(i);
+			console.log("index: " + i);
 		} catch (e) { throw e; }
 	}
+
+	//NOOO
+	// img_obj.files[0].width = 584;
+	// img_obj.files[0].height = 427;
+
 	// img_obj.files.map(i => console.log(i.filename))
 	return {
 		props: {
