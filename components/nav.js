@@ -55,6 +55,14 @@ const Nav = ({ theme, theme_callback, theme_map }) => {
 				</li>
 
 				<li className={nav_styles.nav_item}>
+					<Link href="/memes"><a className={nav_styles.nav_link}>
+						<HandPeaceIcon/>
+						<span className={nav_styles.link_text}>Memes</span>
+					</a>
+					</Link>
+				</li>
+
+				<li className={nav_styles.nav_item}>
 					<Link href="https://github.com/gOps132/pt_4th_qtr_epilan"><a className={nav_styles.nav_link}>
 						<GithubBrandIcon/>
 						<span className={nav_styles.link_text}>Repo</span>
