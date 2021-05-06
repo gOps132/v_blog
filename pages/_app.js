@@ -26,7 +26,9 @@ function MyApp({ Component, pageProps }) {
 			<Nav theme={currentTheme} theme_callback={toggle_theme} theme_map={theme_map} />
 			<main></main>
 			<article>
-				<Component {...pageProps} />
+				<div className={`inner_root`}>
+					<Component {...pageProps} />
+				</div>
 				<Footer/>
 			</article>
 		</div>

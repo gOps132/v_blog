@@ -14,14 +14,16 @@ const Home = () => {
 		<div className={home_styles.main_div}>
 			<div className={home_styles.main_profile}>
 				<div className={home_styles.profile_holder}>
-					<Profile />
-					{/* <Loader/> */}
+					{/* <Profile /> */}
+					<Loader/>
 				</div>
-				{/* hardcoded this because why not */}
 				<div>
+					{/* hardcoded this because why not */}
 					<h3>Name: Epilan Gian Cedrick G.</h3>
 					<h3>Age: 15</h3>
 					<h3>Born: March 26, 2006</h3>
+					<br></br>
+					<p>No pic yet</p>
 				</div>
 			</div>
 		</div>
