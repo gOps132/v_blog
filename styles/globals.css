@@ -40,8 +40,8 @@ article {
 	color: var(--text-secondary);
 }
 
-.inner_root {
-	height: 100vh;
+article:last-child {
+	margin-top: auto;
 }
 
 .dark {
