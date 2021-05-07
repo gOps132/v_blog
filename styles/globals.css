@@ -44,6 +44,10 @@ article:last-child {
 	margin-top: auto;
 }
 
+.inner_root {
+	min-height: 100vh;
+}
+
 .dark {
 	--text-primary: #3f3c3c;
 	--text-secondary: #ececec;
