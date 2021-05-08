@@ -20,7 +20,7 @@
 }
 
 /* have to make a false body */
-/* main {
+main {
 	position: fixed;
 	height: 1000vh;
 	width: 1000vw;
@@ -31,11 +31,11 @@
 
 	background-color: var(--bg-primary);
 	overflow: hidden;
-} */
-
-body {
-	background-color: var(--bg-primary);
 }
+
+/* body {
+	background-color: var(--bg-primary);
+} */
 
 article {
 	margin: 1rem;

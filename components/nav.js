@@ -6,6 +6,7 @@ import Link from "next/link";
 import HouseIcon from "../public/svg/house-user-solid.svg";
 import HandPeaceIcon from "../public/svg/hand-peace-solid.svg";
 import GithubBrandIcon from "../public/svg/github-brands.svg";
+import LaughSquint from "../public/svg/laugh-squint-solid.svg";
 
 const Nav = ({ theme, theme_callback }) => {
 	const GetThemeType = () => {
@@ -56,7 +57,7 @@ const Nav = ({ theme, theme_callback }) => {
 
 				<li className={nav_styles.nav_item}>
 					<Link href="/memes"><a className={nav_styles.nav_link}>
-						<HandPeaceIcon/>
+						<LaughSquint/>
 						<span className={nav_styles.link_text}>Memes</span>
 					</a>
 					</Link>
