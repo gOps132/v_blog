@@ -15,10 +15,25 @@ const Memes = (props) => {
 						key={i.filename}
 						width={i.width}
 						height={i.height}
-						src={`/img/memes/${i.filename}}`} 
+						src={`/img/memes/${i.filename}`} 
 						layout="responsive"
 					/>
+					// console.log(`
+					// return <Image
+					// key=${i.filename}
+					// width=${i.width}
+					// height=${i.height}
+					// src=${`/img/memes/${i.filename}`}} 
+					// layout="responsive"
+					// />
+					// `)
 				})}
+				{/* <Image 
+					src={`/img/memes/01.jpg`}
+					width="584"
+					height="427"
+					layout="responsive"
+				/> */}
 				{console.log(props.main_obj)}
 			</div>
 		</div>
@@ -38,8 +53,6 @@ export async function getStaticProps() {
 			height: sizeOf(`public/img/memes/${image_names[i]}`).height,
 		});
 	}
-
-	console.log(`main_obj: ${img_obj.files[0].width}`);
 
 	return {
 		props: {
