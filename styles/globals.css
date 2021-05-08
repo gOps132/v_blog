@@ -38,6 +38,7 @@ article {
 	margin-left: 6rem;
 
 	color: var(--text-secondary);
+	overflow-y: hidden;
 }
 
 article:last-child {

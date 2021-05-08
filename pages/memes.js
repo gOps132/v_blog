@@ -72,6 +72,7 @@ export function getStaticProps() {
 		// 		console.log('height: ' + size.height);
 		// 	}
 		// });
+		
 		// im.identify(['-format', '%wx%h',`/public/img/memes/${img_obj.files[i].filename}`], function(err, features){
 		// 	if (err) throw err;
 		// 	console.log("dimensions: " + features);
