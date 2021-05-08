@@ -4,6 +4,7 @@ import "../styles/globals.css";
 
 import Nav from "../components/nav";
 import Footer from "../components/footer";
+import Scbtn from "../components/scroll_to_top";
 
 import React, { useState, useCallback } from "react";
 
@@ -31,6 +32,7 @@ function MyApp({ Component, pageProps }) {
 				</div>
 				<Footer />
 			</article>
+			<Scbtn/>
 		</div>
 	)
 }

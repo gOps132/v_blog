@@ -1,6 +1,10 @@
 .main_div {
 	padding: 1rem;
-	background-color: var(--bg-secondary);	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	/* background-color: var(--bg-secondary);	 */
 }
 
 .main_profile {
@@ -31,8 +35,8 @@
 
 .user {
 	display: inline-block;
-	width: 150px;
-	height: 150px;
+	width: 10rem;
+	height: 10rem;
 	border-radius: 50%;
 
 	background-repeat: no-repeat;

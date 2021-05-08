@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@svgr/webpack": "^5.5.0",
+    "framer": "^1.2.29",
     "fs": "0.0.1-security",
     "gm": "^1.23.1",
     "image-size": "^1.0.0",

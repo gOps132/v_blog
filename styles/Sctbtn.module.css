@@ -1,0 +1,27 @@
+.scroll_to_top_btn {
+	position: fixed;
+	z-index: 10;
+	right: 10px;
+	bottom: 10px;
+	filter: grayscale(100%) opacity(0.2);
+	color: var(--text-secondary);
+	transition: var(--transition-speed);
+}
+
+.scroll_to_top_btn:hover {
+	filter: grayscale(0%) opacity(1);
+	cursor: pointer;
+}
+
+.scroll_to_top_btn svg {
+	width: 2.5rem;
+	min-width: 2rem;
+	margin: 0 1.5rem;
+}
+
+@media only screen and (max-width: 600px) {
+	.scroll_to_top_btn {
+		visibility: hidden;
+	}
+}
+

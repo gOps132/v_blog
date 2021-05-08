@@ -14,8 +14,8 @@ const Home = () => {
 		<div className={home_styles.main_div}>
 			<div className={home_styles.main_profile}>
 				<div className={home_styles.profile_holder}>
-					{/* <Profile /> */}
-					<Loader/>
+					<Profile />
+					{/* <Loader/> */}
 				</div>
 				<div>
 					{/* hardcoded this because why not */}

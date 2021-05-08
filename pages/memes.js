@@ -1,26 +1,37 @@
-import React from "react";
 const fs = require("fs");
-
-import Image from "next/image";
-
 const sizeOf = require('image-size');
+
+import React from "react";
+import Image from "next/image";
+import Loader from "../components/loader";
+
+import meme_style from "../styles/Meme.module.css";
+
 
 const Memes = (props) => {
 	return (
-		<div>
-			<h1>This is the memes page</h1>
-			<div>
-				{props.main_obj.files.map(i => {
-					return <Image
-						key={i.filename}
-						width={i.width}
-						height={i.height}
-						src={`/img/memes/${i.filename}`} 
-						layout="responsive"
-					/>
-				})}
-				{/* DEBUG */}
-				{console.log(props.main_obj)}
+		<div className={meme_style.main_div}>
+			<h1>Memes that I like</h1>
+			<div className={meme_style.meme_container}>
+				{/* <FadeInImage> */}
+					{props.main_obj.files.map(i => {
+						return (
+							<div className={meme_style.meme}>
+								<Image
+									key={i.filename}
+									width={i.width}
+									height={i.height}
+									src={`/img/memes/${i.filename}`}
+									layout="intrinsic"
+									loading="lazy"
+									placeholder={<Loader/>}
+								/>
+							</div>
+						)
+					})}
+					{/* DEBUG */}
+					{console.log(props.main_obj)}
+				{/* </FadeInImage> */}
 			</div>
 		</div>
 	);
