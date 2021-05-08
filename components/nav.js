@@ -7,7 +7,7 @@ import HouseIcon from "../public/svg/house-user-solid.svg";
 import HandPeaceIcon from "../public/svg/hand-peace-solid.svg";
 import GithubBrandIcon from "../public/svg/github-brands.svg";
 
-const Nav = ({ theme, theme_callback, theme_map }) => {
+const Nav = ({ theme, theme_callback }) => {
 	const GetThemeType = () => {
 		if(theme == "dark")
 			return <DarkIcon/>

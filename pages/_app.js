@@ -24,12 +24,12 @@ function MyApp({ Component, pageProps }) {
 	return (
 		<div className={currentTheme}>
 			<Nav theme={currentTheme} theme_callback={toggle_theme} theme_map={theme_map} />
-			<main></main>
+			{/* <main></main> */}
 			<article>
 				<div className={`inner_root`}>
 					<Component {...pageProps} />
 				</div>
-				<Footer/>
+				<Footer />
 			</article>
 		</div>
 	)

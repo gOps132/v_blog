@@ -18,22 +18,8 @@ const Memes = (props) => {
 						src={`/img/memes/${i.filename}`} 
 						layout="responsive"
 					/>
-					// console.log(`
-					// return <Image
-					// key=${i.filename}
-					// width=${i.width}
-					// height=${i.height}
-					// src=${`/img/memes/${i.filename}`}} 
-					// layout="responsive"
-					// />
-					// `)
 				})}
-				{/* <Image 
-					src={`/img/memes/01.jpg`}
-					width="584"
-					height="427"
-					layout="responsive"
-				/> */}
+				{/* DEBUG */}
 				{console.log(props.main_obj)}
 			</div>
 		</div>
