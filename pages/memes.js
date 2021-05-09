@@ -13,8 +13,7 @@ const Memes = (props) => {
 		<div className={meme_style.main_div}>
 			<h1>Memes that I like</h1>
 			<div className={meme_style.meme_container}>
-				{/* <FadeInImage> */}
-					{props.main_obj.files.map(i => {
+					{props.main_obj.files.map((i, t) => {
 						return (
 							<div className={meme_style.meme}>
 								<Image
@@ -23,7 +22,7 @@ const Memes = (props) => {
 									height={i.height}
 									src={`/img/memes/${i.filename}`}
 									layout="intrinsic"
-									loading="lazy"
+									loading={props.main_obj.length === t+1 ? 'eager' : 'lazy'}
 									placeholder={<Loader/>}
 								/>
 							</div>
@@ -31,7 +30,6 @@ const Memes = (props) => {
 					})}
 					{/* DEBUG */}
 					{console.log(props.main_obj)}
-				{/* </FadeInImage> */}
 			</div>
 		</div>
 	);
@@ -48,6 +46,7 @@ export async function getStaticProps() {
 			filename: image_names[i],
 			width: sizeOf(`public/img/memes/${image_names[i]}`).width,
 			height: sizeOf(`public/img/memes/${image_names[i]}`).height,
+			length: image_names.length
 		});
 	}
 
