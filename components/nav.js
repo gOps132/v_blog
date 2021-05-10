@@ -7,6 +7,7 @@ import HouseIcon from "../public/svg/house-user-solid.svg";
 import HandPeaceIcon from "../public/svg/hand-peace-solid.svg";
 import GithubBrandIcon from "../public/svg/github-brands.svg";
 import LaughSquint from "../public/svg/laugh-squint-solid.svg";
+import HeadePhonesAlt from  "../public/svg/headphones-alt-solid.svg"
 
 const Nav = ({ theme, theme_callback }) => {
 	const GetThemeType = () => {
@@ -59,6 +60,14 @@ const Nav = ({ theme, theme_callback }) => {
 					<Link href="/memes"><a className={nav_styles.nav_link}>
 						<LaughSquint/>
 						<span className={nav_styles.link_text}>Memes</span>
+					</a>
+					</Link>
+				</li>
+
+				<li className={nav_styles.nav_item}>
+					<Link href="/music"><a className={nav_styles.nav_link}>
+						<HeadePhonesAlt/>
+						<span className={nav_styles.link_text}>Music</span>
 					</a>
 					</Link>
 				</li>
