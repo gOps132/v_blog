@@ -49,15 +49,13 @@ export async function getStaticProps() {
 		let m_height = (tmp = sizeOf(`public/img/memes/${image_names[i]}`).height/1.5, ((t)=>{if (t > 600) { tmp = tmp/1.5}})(tmp), tmp)
 		img_obj.files.push({
 			filename: image_names[i],
-			width: m_width,
-			height: m_height,
-			area: (m_width * m_height)
+			width: Math.round(m_width),
+			height: Math.round(m_height),
 		});
 	}
 
 	img_obj.files.sort((a, b) => {
-		return a.area - b.area;
-		// return a.width + b.width;
+		return (a.width * a.height) - (b.width * b.height);
 	});
 
 	return {
