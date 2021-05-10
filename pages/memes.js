@@ -45,8 +45,8 @@ export async function getStaticProps() {
 	console.log(image_names);
 	for (let i = 0; i < image_names.length; i++) {
 		let tmp;
-		let m_width = (tmp = sizeOf(`public/img/memes/${image_names[i]}`).width/1.5, ((t)=>{if (t > 600) { tmp = tmp/2}})(tmp), tmp);
-		let m_height = (tmp = sizeOf(`public/img/memes/${image_names[i]}`).height/1.5, ((t)=>{if (t > 400) { tmp = tmp/2}})(tmp), tmp)
+		let m_width = (tmp = sizeOf(`public/img/memes/${image_names[i]}`).width/1.5, ((t)=>{if (t > 800) { tmp = tmp/1.5}})(tmp), tmp);
+		let m_height = (tmp = sizeOf(`public/img/memes/${image_names[i]}`).height/1.5, ((t)=>{if (t > 600) { tmp = tmp/1.5}})(tmp), tmp)
 		img_obj.files.push({
 			filename: image_names[i],
 			width: m_width,
