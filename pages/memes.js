@@ -5,24 +5,25 @@ import React from "react";
 import Image from "next/image";
 import Loader from "../components/loader";
 
-import meme_style from "../styles/Meme.module.css";
-
+import image_style from "../styles/Image.module.css";
+import common_style from "../styles/Common.module.css";
+// import gallery_style from "../styles/Gallery.module.css"
 
 const Memes = (props) => {
 	return (
-		<div className={meme_style.main_div}>
+		<div className={common_style.main_div}>
 			<h1>Memes that I like</h1>
-			<div className={meme_style.meme_container}>
+			<div className={image_style.image_container}>
 					{props.main_obj.files.map((i, t) => {
 						return (
-							<div className={meme_style.meme}>
+							<div className={image_style.image_container_margin}>
 								<Image
+									className={image_style.image_self}
 									key={i.filename}
 									width={i.width}
 									height={i.height}
 									src={`/img/memes/${i.filename}`}
 									layout="intrinsic"
-									loading={props.main_obj.length === t+1 ? 'eager' : 'lazy'}
 									placeholder={<Loader/>}
 								/>
 							</div>
@@ -41,14 +42,23 @@ export async function getStaticProps() {
 	}
 
 	let image_names = fs.readdirSync("public/img/memes");
+	console.log(image_names);
 	for (let i = 0; i < image_names.length; i++) {
+		let tmp;
+		let m_width = (tmp = sizeOf(`public/img/memes/${image_names[i]}`).width/1.5, ((t)=>{if (t > 600) { tmp = tmp/2}})(tmp), tmp);
+		let m_height = (tmp = sizeOf(`public/img/memes/${image_names[i]}`).height/1.5, ((t)=>{if (t > 400) { tmp = tmp/2}})(tmp), tmp)
 		img_obj.files.push({
 			filename: image_names[i],
-			width: sizeOf(`public/img/memes/${image_names[i]}`).width,
-			height: sizeOf(`public/img/memes/${image_names[i]}`).height,
-			length: image_names.length
+			width: m_width,
+			height: m_height,
+			area: (m_width * m_height)
 		});
 	}
+
+	img_obj.files.sort((a, b) => {
+		return a.area - b.area;
+		// return a.width + b.width;
+	});
 
 	return {
 		props: {

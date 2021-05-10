@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
+
+import common_style from "../styles/Common.module.css";
 import scbtn_style from "../styles/Sctbtn.module.css";
-import nav_styles from "../styles/Nav.module.css";
 
 import ArrowCircleUp from "../public/svg/arrow-circle-up-solid.svg";
 
@@ -29,7 +30,8 @@ const Scbtn = () => {
 	return (
 		<div>
 			{isVisible &&
-				<div onClick={scrollToTop} className={scbtn_style.scroll_to_top_btn}>
+				<div onClick={scrollToTop} 
+					className={`${scbtn_style.scroll_to_top_btn} ${common_style.icon_style}`}>
 					<ArrowCircleUp alt={`Go To Top`}/>
 				</div>}
 		</div>

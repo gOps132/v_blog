@@ -4,8 +4,8 @@
 	align-items: center;
 }
 
-/* .icon_style {
+.icon_style {
 	filter: grayscale(100%) opacity(0.2);
 	color: var(--text-secondary);
 	transition: var(--transition-speed);
-} */
+}

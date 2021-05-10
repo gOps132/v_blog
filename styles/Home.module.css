@@ -4,7 +4,6 @@
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
-	/* background-color: var(--bg-secondary);	 */
 }
 
 .main_profile {
@@ -26,12 +25,7 @@
 	justify-content: center;
 
 	background-color: var(--bg-primary);
-	/* transition: var(--transition-speed); */
 }
-
-/* .profile_holder:hover {
-	box-shadow: 0.5rem 0 1rem 1rem var(--bg-primary);
-} */
 
 .user {
 	display: inline-block;
@@ -41,5 +35,4 @@
 
 	background-repeat: no-repeat;
 	background-position: center center;
-	/* background-size: cover; */
 }

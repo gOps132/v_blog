@@ -3,9 +3,6 @@
 	z-index: 10;
 	right: 10px;
 	bottom: 10px;
-	filter: grayscale(100%) opacity(0.2);
-	color: var(--text-secondary);
-	transition: var(--transition-speed);
 }
 
 .scroll_to_top_btn:hover {

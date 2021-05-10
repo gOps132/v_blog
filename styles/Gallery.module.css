@@ -1,0 +1,45 @@
+.gallery_list > li {
+	list-style: none;
+	list-style-position: outside;
+}
+
+.gallery_list {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	grid-template-rows: repeat(12, 200px);
+	grid-gap: 1rem;
+	grid-auto-flow: dense;
+}
+
+.gallery_list > li:nth-child(4n) {
+	grid-column: span 3;
+	grid-row: span 3;
+}
+
+.gallery_list>li:nth-child(8n) {
+	grid-column: span 2;
+	grid-row: span 2;
+}
+
+.gallery_list > li > figure {
+	height: 100%;
+	background-color: var(--bg-secondary);
+
+	margin-block-start: 0;
+	margin-block-end: 0;
+	margin-inline-start: 0;
+	margin-inline-end: 0;
+}
+
+/* .gallery_list>li:hover {
+	filter: grayscale(0%) opacity(1);
+	background: var(--bg-secondary);
+	color: var(--text-secondary);
+} */
+
+
+.gallery_list>li>figure>img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
