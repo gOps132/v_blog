@@ -2,23 +2,20 @@
 ### Deployed in Vercel
 ## Getting Started
 
-First, run the development server:
+### First, run the development server:
 
 ```bash
-npm run dev
+    npm run dev
 
-# or
+    # or
 
-yarn dev
+    yarn dev
 ```
 
-To build static
+### To build static
 
 ```sh
-# note: don't work with next image optimization
-#   but it should work in vercel
+    npm run build 
 
-npm run build 
-
-npm run export
+    npm run start
 ```
