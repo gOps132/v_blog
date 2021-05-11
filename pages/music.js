@@ -45,7 +45,7 @@ const MusicTemplate = ({ album, album_image_url, artist, song_url, title }) => {
 }
 
 export async function getServerSideProps() {
-    let res = await fetch('http://localhost:3000/api/spotify');
+    let res = await fetch('https://pt-4th-qtr-epilan.vercel.app/api/spotify');
     let data = await res.json();
 
     console.log("MUSIC RES:" + res);
