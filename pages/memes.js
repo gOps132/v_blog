@@ -14,23 +14,22 @@ const Memes = (props) => {
 		<div className={common_style.main_div}>
 			<h1>Memes that I like</h1>
 			<div className={image_style.image_container}>
-					{props.main_obj.files.map((i, t) => {
-						return (
-							<div className={image_style.image_container_margin}>
-								<Image
-									className={image_style.image_self}
-									key={i.filename}
-									width={i.width}
-									height={i.height}
-									src={`/img/memes/${i.filename}`}
-									layout="intrinsic"
-									placeholder={<Loader/>}
-								/>
-							</div>
-						)
-					})}
-					{/* DEBUG */}
-					{console.log(props.main_obj)}
+				{props.main_obj.files.map((i, t) => {
+					return (
+						<div className={image_style.image_container_margin} key={t}>
+							<Image
+								className={image_style.image_self}
+								width={i.width}
+								height={i.height}
+								src={`/img/memes/${i.filename}`}
+								layout="intrinsic"
+								placeholder={<Loader />}
+							/>
+						</div>
+					)
+				})}
+				{/* DEBUG */}
+				{console.log(props.main_obj)}
 			</div>
 		</div>
 	);
@@ -45,8 +44,8 @@ export async function getStaticProps() {
 	console.log(image_names);
 	for (let i = 0; i < image_names.length; i++) {
 		let tmp;
-		let m_width = (tmp = sizeOf(`public/img/memes/${image_names[i]}`).width/1.5, ((t)=>{if (t > 800) { tmp = tmp/1.5}})(tmp), tmp);
-		let m_height = (tmp = sizeOf(`public/img/memes/${image_names[i]}`).height/1.5, ((t)=>{if (t > 600) { tmp = tmp/1.5}})(tmp), tmp)
+		let m_width = (tmp = sizeOf(`public/img/memes/${image_names[i]}`).width / 1.5, ((t) => { if (t > 800) { tmp = tmp / 1.5 } })(tmp), tmp);
+		let m_height = (tmp = sizeOf(`public/img/memes/${image_names[i]}`).height / 1.5, ((t) => { if (t > 600) { tmp = tmp / 1.5 } })(tmp), tmp)
 		img_obj.files.push({
 			filename: image_names[i],
 			width: Math.round(m_width),

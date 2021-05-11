@@ -4,11 +4,16 @@ const {
 	SPOTIFY_CLIENT_ID: client_id,
 	SPOTIFY_CLIENT_SECRET: client_secret,
 	SPOTIFY_REFRESH_TOKEN: refresh_token,
+	SPOTIFY_G_USER_ID: user_id,
 } = process.env;
 
+const playlist_id = `1DtfpSVi5DFKi4S7ovXkta`;
 const basic = Buffer.from(`${client_id}:${client_secret}`).toString('base64');
+
 const NOW_PLAYING_ENDPOINT = `https://api.spotify.com/v1/me/player/currently-playing`;
 const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`;
+const PLAYLIST_ENDPOINT = `https://api.spotify.com/v1/users/${user_id}/playlists`;
+const GET_PLAYLIST_ENDPOINT = `https://api.spotify.com/v1/playlists/${playlist_id}`;
 
 const getAccessToken = async () => {
 	const response = await fetch(TOKEN_ENDPOINT, {
@@ -36,27 +41,54 @@ export const getNowPlaying = async () => {
 	});
 };
 
+export const getListUserPlaylist = async () => {
+	const { access_token } = await getAccessToken();
+
+	return fetch(PLAYLIST_ENDPOINT, {
+		method: "GET",
+		headers: {
+			Authorization: `Bearer ${access_token}`,
+		},
+	});
+};
+
+export const getUserPlaylist = async () => {
+	const { access_token } = await getAccessToken();
+
+	return fetch(GET_PLAYLIST_ENDPOINT, {
+		method: "GET",
+		headers: {
+			Authorization: `Bearer ${access_token}`,
+		},
+	});
+};
+
 export default async (_, res) => {
-	const response = await getNowPlaying();
+	// const response = await getListUserPlaylist();
+	const response = await getUserPlaylist();
 
 	if (response.status === 204 || response.status > 400) {
 		return res.status(200).json({ isPlaying: false });
 	}
 
-	const song = await response.json();
-	const isPlaying = song.is_playing;
-	const title = song.item.name;
-	const artist = song.item.artists.map((_artist) => _artist.name).join(', ');
-	const album = song.item.album.name;
-	const albumImageUrl = song.item.album.images[0].url;
-	const songUrl = song.item.external_urls.spotify;
+	const res_json = await response.json()
 
-	return res.status(200).json({
-		album,
-		albumImageUrl,
-		artist,
-		isPlaying,
-		songUrl,
-		title,
-	});
+	// const song = await response.json();
+	// const isPlaying = song.is_playing;
+	// const title = song.item.name;
+	// const artist = song.item.artists.map((_artist) => _artist.name).join(', ');
+	// const album = song.item.album.name;
+	// const albumImageUrl = song.item.album.images[0].url;
+	// const songUrl = song.item.external_urls.spotify;
+
+	// return res.status(200).json({
+	// 	album,
+	// 	albumImageUrl,
+	// 	artist,
+	// 	isPlaying,
+	// 	songUrl,
+	// 	title,
+	// });
+
+	return res.status(200).json(res_json);
 };
