@@ -48,7 +48,6 @@ export async function getServerSideProps() {
     let res = await fetch('https://pt-4th-qtr-epilan.vercel.app/api/spotify');
     let data = await res.json();
 
-    console.log("MUSIC RES:" + res);
     return {
         props: {
             spotify_data: data
