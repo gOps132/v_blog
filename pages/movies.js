@@ -14,20 +14,24 @@ const Movies = (props) => {
 	}
 	return (
 		<div className={common_styles.main_div}>
-			<h1>Favorite Movies</h1>
-			<ul className={movie_styles.list}>
-				{props.imdb_data.items.map((i, t) => {
-					return (
-						<div key={t} className={movie_styles.media_img}>
-							<Image
-								src={i.image}
-								width={200}
-								height={250}
-							/>
-						</div>
-					)
-				})}
-			</ul>
+			{(!props.err ?
+				<>
+					<h1>Favorite Movies</h1>
+					<ul className={movie_styles.list}>
+						{props.imdb_data.items.map((i, t) => {
+							return (
+								<div key={t} className={movie_styles.media_img}>
+									<Image
+										src={i.image}
+										width={200}
+										height={250}
+									/>
+								</div>
+							)
+						})}
+					</ul>
+				</> : <h1>Fetch or Server Error, reload for more info</h1>)
+			}
 		</div>
 	)
 }
