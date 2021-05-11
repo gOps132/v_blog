@@ -9,5 +9,8 @@ module.exports = {
 	},
 	env: {
 		SERVER: process.env.SERVER_URL,
-	}
+	},
+	api: {
+		bodyParser: true,
+	},
 };

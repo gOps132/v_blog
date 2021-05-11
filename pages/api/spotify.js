@@ -63,7 +63,18 @@ export const getUserPlaylist = async () => {
 	});
 };
 
-export default async (_, res) => {
+export const getUserPlaylistItems = async () => {
+	const { access_token } = await getAccessToken();
+
+	return fetch(`${GET_PLAYLIST_ENDPOINT}/tracks`, {
+		method: "GET",
+		headers: {
+			Authorization: `Bearer ${access_token}`,
+		},
+	});
+};
+
+export default async (req, res) => {
 	const response = await getUserPlaylist();
 
 	if (response.status === 204 || response.status > 400) {

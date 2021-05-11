@@ -7,7 +7,7 @@ export default function Home() {
 			<div>
 				<p>This is a website that I remade the next.js framework, took some time to learn but it's worth it</p>
 				<p>The memes page is statically served</p>
-				<p>The music page gets dynamic content from the nodejs API and uses the Spotify API using the Authorization flow</p>
+				<p>The music page gets dynamic content from the nodejs API implementation of the spotify web API</p>
 				<p>See the git respository for more info</p>
 			</div>
 		</div>
