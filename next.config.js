@@ -13,4 +13,10 @@ module.exports = {
 	api: {
 		bodyParser: true,
 	},
+	images: {
+		domains: [
+			'imdb-api.com',
+			'mosaic.scdn.co',
+		],
+	},
 };

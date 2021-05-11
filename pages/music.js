@@ -3,6 +3,7 @@ import list_styles from "../styles/List.module.css";
 import image_styles from "../styles/Image.module.css";
 
 import Link from "next/link";
+import Image from "next/image";
 
 import { useRouter } from 'next/router'
 
@@ -31,7 +32,7 @@ const Music = (props) => {
                         (!props.err ?
                             <div className={list_styles.list}>
                                 <div className={list_styles.play_list_header}>
-                                    {<img
+                                    {<Image
                                         className={image_styles.image_border_circle}
                                         src={props.spotify_data.images[0].url}
                                         srcSet={src_set_str}
