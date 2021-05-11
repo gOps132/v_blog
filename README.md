@@ -12,10 +12,14 @@
     yarn dev
 ```
 
-### To build static
+### To build locally
 
 ```sh
-    npm run build 
+    npm run dev # seperate terminal
+    
+    &&
+
+    npm run build
 
     npm run start
 ```

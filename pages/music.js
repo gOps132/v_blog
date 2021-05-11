@@ -2,13 +2,10 @@ import common_styles from "../styles/Common.module.css";
 import list_styles from "../styles/List.module.css";
 
 import Link from "next/link";
-import Image from "next/image";
 
 import { useRouter } from 'next/router'
 
 import Loader from "../components/loader";
-
-import querystring from 'querystring';
 
 // TODO: add a server error guard
 // TODO: add a loader for SSG load times

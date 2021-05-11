@@ -3,13 +3,19 @@ const sizeOf = require('image-size');
 
 import React from "react";
 import Image from "next/image";
+import { useRouter } from 'next/router'
+
 import Loader from "../components/loader";
 
 import image_style from "../styles/Image.module.css";
 import common_style from "../styles/Common.module.css";
-// import gallery_style from "../styles/Gallery.module.css"
 
 const Memes = (props) => {
+	const router = useRouter();
+	
+	if (router.isFallback) {
+        return <Loader />
+	}
 	return (
 		<div className={common_style.main_div}>
 			<h1>Memes that I like</h1>
@@ -60,7 +66,8 @@ export async function getStaticProps() {
 	return {
 		props: {
 			main_obj: img_obj
-		}
+		},
+		revalidate: 60
 	}
 }
 
