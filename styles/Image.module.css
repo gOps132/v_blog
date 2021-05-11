@@ -14,3 +14,15 @@
 .image_self {
     border-radius: 1rem;
 }
+
+.image_border_circle, .image_border_circle img {
+    display: flex;
+    
+    align-items: center;
+	justify-content: center;
+
+    border-width: 0.2rem;
+    border-style: solid ;
+    border-color: var(--bg-secondary);
+    border-radius: 50%;
+}

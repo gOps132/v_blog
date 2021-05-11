@@ -1,5 +1,6 @@
 import common_styles from "../styles/Common.module.css";
 import list_styles from "../styles/List.module.css";
+import image_styles from "../styles/Image.module.css";
 
 import Link from "next/link";
 
@@ -31,7 +32,7 @@ const Music = (props) => {
                             <div className={list_styles.list}>
                                 <div className={list_styles.play_list_header}>
                                     {<img
-                                        className={list_styles.play_list_img}
+                                        className={image_styles.image_border_circle}
                                         src={props.spotify_data.images[0].url}
                                         srcSet={src_set_str}
                                         width={150}
@@ -48,7 +49,7 @@ const Music = (props) => {
                                                     <div className={list_styles.container}>
                                                         <p>{i.track.name}</p>
                                                     </div>
-                                                    <p className={list_styles.index}>{t + 1}</p>
+                                                    <></>
                                                 </li>
                                             </a></Link>
                                         )

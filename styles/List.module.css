@@ -9,6 +9,13 @@
     background-color: var(--bg-secondary);
     margin-top: 0.5rem;
     padding: 1rem;
+    transition: var(--transition-speed);
+    filter: opacity(0.5);
+}
+
+.list_element:hover {
+    filter: opacity(1);
+    /* background-color: var(--text-secondary); */
 }
 
 .index {
@@ -18,12 +25,6 @@
 .play_list_header {
     display: flex;
     width: 80%;
-}
-
-.play_list_img {
-    border-width: 0.2rem;
-    border-style: solid ;
-    border-color: var(--bg-secondary);
 }
 
 .play_list_name {
