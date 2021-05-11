@@ -1,5 +1,10 @@
-import common_styles from "../styles/Common.module.css"
+import common_styles from "../styles/Common.module.css";
+import list_styles from "../styles/List.module.css";
+
+import Link from "next/link";
 import Image from "next/image";
+
+// TODO: add a server error guard
 
 const Music = (props) => {
     return (
@@ -7,24 +12,23 @@ const Music = (props) => {
             {
                 <div>
                     {console.log(props.spotify_data)}
-                    {/* check if playing anything */}
                     {
-                        // (props.spotify_data.isPlaying ? 
-                        //     <MusicTemplate 
-                        //         album={props.spotify_data.title} 
-                        //         album_image_url={props.spotify_data.albumImageUrl}
-                        //         artist={props.spotify_data.artist}
-                        //         song_url={props.spotify_data.songUrl}
-                        //         title={props.spotify_data.title}
-                        //     /> 
-                        // : <h1>Not playing anything</h1>)
-                    }
-                    {
-                        <ul>
-                            {props.spotify_data.tracks.items.map((i, t) => {
-                                return <li key={t}>{i.track.name}</li>
-                            })}
-                        </ul>
+                        (!props.err ?
+                            <>
+                                <h1>{props.spotify_data.name}</h1>
+                                <ul className={list_styles.list}>
+                                    {props.spotify_data.tracks.items.map((i, t) => {
+                                        return (
+                                            <Link href={i.track.external_urls.spotify} key={t}><a>
+                                                <li className={list_styles.list_element}>
+                                                    <p>{i.track.name}</p>
+                                                </li>
+                                            </a></Link>
+                                        )
+                                    })}
+                                </ul>
+                            </>
+                        : <h1>Fetch or Server Error, reload for more info</h1>)
                     }
                 </div>
             }
@@ -32,25 +36,38 @@ const Music = (props) => {
     );
 }
 
-const MusicTemplate = ({ album, album_image_url, artist, song_url, title }) => {
-    return (
-        <div>
-            <h2>{title}</h2>
-            <img src={album_image_url} />
-            <h3>{album}</h3>
-            <h4>{artist}</h4>
-            <h4>{song_url}</h4>
-        </div>
-    )
-}
+// const MusicTemplate = ({ album, album_image_url, artist, song_url, title }) => {
+//     return (
+//         <div>
+//             <h2>{title}</h2>
+//             <img src={album_image_url} />
+//             <h3>{album}</h3>
+//             <h4>{artist}</h4>
+//             <h4>{song_url}</h4>
+//         </div>
+//     )
+// }
 
+// TODO: fix random occuring internal server error
 export async function getServerSideProps() {
-    let res = await fetch('https://pt-4th-qtr-epilan.vercel.app/api/spotify');
+
+    // TODO: add some url parameters for optimization
+    let res = await fetch(`${process.env.SERVER_URL}/api/spotify`);
+
+    if (res.status === 204 || res.status > 400) {
+		return {
+            props: {
+                err: true
+            }
+        }
+	}
+
     let data = await res.json();
 
     return {
         props: {
-            spotify_data: data
+            spotify_data: data,
+            err: false
         }
     };
 };

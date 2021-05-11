@@ -1,0 +1,11 @@
+.list {
+    list-style: none;
+	list-style-position: outside;
+}
+
+.list_element {
+    display: flex;
+    background-color: var(--bg-secondary);
+    margin-top: 0.5rem;
+    padding: 1rem;
+}
