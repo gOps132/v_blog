@@ -50,14 +50,16 @@ const Music = (props) => {
 																(i.track.preview_url) ?
 																	<div className={list_styles.preview_button}>
 																		{/* on play change to pause button */}
-																		<PlayCircle
-																			className={list_styles.play_button}
-																			onClick={() => {
-																				let pid = document.getElementById(`preview-${t}`);
-																				(isPlaying ? pid.pause() : pid.play());
-																				useIsPlaying(!isPlaying);
-																			}}
-																		/>
+																		<>
+																			<PlayCircle
+																				className={list_styles.play_button}
+																				onClick={() => {
+																					let pid = document.getElementById(`preview-${t}`);
+																					(isPlaying ? pid.pause() : pid.play());
+																					useIsPlaying(!isPlaying);
+																				}}
+																			/>
+																		</>
 																	</div>
 																	: <>NONE</>
 															}

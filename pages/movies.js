@@ -4,7 +4,6 @@ import Loader from "../components/loader";
 import Image from "next/image";
 
 import common_styles from "../styles/Common.module.css";
-import list_styles from "../styles/List.module.css";
 import movie_styles from "../styles/Movie.module.css";
 
 const Movies = (props) => {
@@ -39,7 +38,6 @@ const Movies = (props) => {
 
 export async function getStaticProps() {
 	let res = await fetch(`${process.env.SERVER_URL}/api/imdb`, { method: "GET" })
-	// let res = await fetch(`https://pt-4th-qtr-epilan.vercel.app/api/imdb`, { method: "GET" })
 
 	if (res.status === 204 || res.status > 400) {
 		return {
