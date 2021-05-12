@@ -37,7 +37,7 @@ const Movies = (props) => {
 	)
 }
 
-export const getStaticProps = async () => {
+export async function getStaticProps() {
 	let res = await fetch(`${process.env.SERVER_URL}/api/imdb`, { method: "GET" })
 
 	if (res.status === 204 || res.status > 400) {
