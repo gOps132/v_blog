@@ -38,8 +38,8 @@ const Movies = (props) => {
 }
 
 export async function getStaticProps() {
-	// let res = await fetch(`${process.env.SERVER_URL}/api/imdb`, { method: "GET" })
-	let res = await fetch(`https://pt-4th-qtr-epilan.vercel.app/api/imdb`, { method: "GET" })
+	let res = await fetch(`${process.env.SERVER_URL}/api/imdb`, { method: "GET" })
+	// let res = await fetch(`https://pt-4th-qtr-epilan.vercel.app/api/imdb`, { method: "GET" })
 
 	if (res.status === 204 || res.status > 400) {
 		return {
