@@ -28,7 +28,13 @@
 
 .play_list_header {
     display: flex;
-    /* width: 80%; */
+    justify-content: center;
+    position:fixed;
+    z-index: 1;
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--bg-secondary);
+    filter: opacity(0.9);
 }
 
 .play_list_name {
