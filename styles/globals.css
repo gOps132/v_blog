@@ -38,8 +38,7 @@ main {
 } */
 
 article {
-	margin: 1rem;
-	margin-left: 6rem;
+	margin-left: 5rem;
 
 	color: var(--text-secondary);
 	overflow-y: hidden;
