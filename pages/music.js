@@ -18,7 +18,6 @@ import PauseCircle from "../public/svg/pause-circle-solid.svg";
 
 const Music = (props) => {
 	const router = useRouter();
-	let [isPlaying, useIsPlaying] = useState(false);
 	if (router.isFallback) {
 		return <Loader />
 	}
@@ -42,55 +41,7 @@ const Music = (props) => {
 								<ul>
 									{props.spotify_data.tracks.items.map((i, t) => {
 										return (
-											<li id={t} className={list_styles.list_element}>
-												<div>
-													{
-														<>
-															{
-																(i.track.preview_url) ?
-																	<div 
-																		className={list_styles.preview_button}
-																		id={`button-${t}`}
-																	>
-																		{
-																			// I want t.state // t.isplaying
-																			(!isPlaying ?
-																				<PlayCircle
-																					className={list_styles.play_button}
-																					onClick={() => {
-																						let pid = document.getElementById(`preview-${t}`);
-																						pid.play();
-																						useIsPlaying(!isPlaying);
-																					}} /> :
-																				<PauseCircle
-																					className={list_styles.play_button}
-																					onClick={() => {
-																						let pid = document.getElementById(`preview-${t}`);
-																						pid.pause();
-																						useIsPlaying(!isPlaying)
-																					}}
-																				/>
-																			)
-																		}
-																	</div>
-																	: <>NONE</>
-															}
-														</>
-													}
-												</div>
-
-												<audio id={`preview-${t}`} >
-													<source src={i.track.preview_url} type="audio/mp3" />
-												</audio>
-
-												<Link href={i.track.external_urls.spotify} key={t}>
-													<div className={list_styles.container}>
-														<u>{i.track.name}</u>
-													</div>
-												</Link>
-
-												<p className={list_styles.index}>{t + 1}</p>
-											</li>
+											<ListElement item={i} index={t} />
 										)
 									})}
 								</ul>
@@ -102,6 +53,59 @@ const Music = (props) => {
 			</div>
 		</>
 	);
+}
+
+export const ListElement = (props) => {
+	let [isPlaying, useIsPlaying] = useState(false);
+	return (
+		<li id={props.index} className={list_styles.list_element}>
+			<div>
+				{
+					<>
+						{
+							(props.item.track.preview_url) ?
+								<div
+									className={list_styles.preview_button}
+									id={`button-${props.index}`}
+								>
+									{
+										(!isPlaying ?
+											<PlayCircle
+												className={list_styles.play_button}
+												onClick={() => {
+													let pid = document.getElementById(`preview-${props.index}`);
+													pid.play();
+													useIsPlaying(!isPlaying);
+												}} /> :
+											<PauseCircle
+												className={list_styles.play_button}
+												onClick={() => {
+													let pid = document.getElementById(`preview-${props.index}`);
+													pid.pause();
+													useIsPlaying(!isPlaying)
+												}}
+											/>
+										)
+									}
+								</div> : <>NONE</>
+						}
+					</>
+				}
+			</div>
+
+			<audio id={`preview-${props.index}`} >
+				<source src={props.item.track.preview_url} type="audio/mp3" />
+			</audio>
+
+			<Link href={props.item.track.external_urls.spotify} key={props.index}>
+				<div className={list_styles.container}>
+					<u>{props.item.track.name}</u>
+				</div>
+			</Link>
+
+			<p className={list_styles.index}>{props.index + 1}</p>
+		</li>
+	)
 }
 
 export async function getStaticProps() {
