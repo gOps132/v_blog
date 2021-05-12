@@ -54,7 +54,6 @@ const Music = (props) => {
 														{(i.track.preview_url) ?
 															<div className={list_styles.preview_button}>
 																<button 
-																	
 																	onClick={() => {
 																		let pid = document.getElementById(`preview-${t}`);
 																		(isPlaying ? pid.pause() : pid.play());
