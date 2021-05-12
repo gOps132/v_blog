@@ -11,6 +11,7 @@ import { useState } from "react";
 import Loader from "../components/loader";
 
 import PlayCircle from "../public/svg/play-circle-solid.svg";
+import PauseCircle from "../public/svg/pause-circle-solid.svg";
 
 // TODO: add a server error guard
 // TODO: add a loader for SSG load times
@@ -24,7 +25,6 @@ const Music = (props) => {
 	return (
 		<>
 			<div className={`${common_styles.main_div}`}>
-				{/* <> */}
 				{console.log(props.spotify_data)}
 				{
 					(!props.err ?
@@ -48,18 +48,30 @@ const Music = (props) => {
 														<>
 															{
 																(i.track.preview_url) ?
-																	<div className={list_styles.preview_button}>
-																		{/* on play change to pause button */}
-																		<>
-																			<PlayCircle
-																				className={list_styles.play_button}
-																				onClick={() => {
-																					let pid = document.getElementById(`preview-${t}`);
-																					(isPlaying ? pid.pause() : pid.play());
-																					useIsPlaying(!isPlaying);
-																				}}
-																			/>
-																		</>
+																	<div 
+																		className={list_styles.preview_button}
+																		id={`button-${t}`}
+																	>
+																		{
+																			// I want t.state // t.isplaying
+																			(!isPlaying ?
+																				<PlayCircle
+																					className={list_styles.play_button}
+																					onClick={() => {
+																						let pid = document.getElementById(`preview-${t}`);
+																						pid.play();
+																						useIsPlaying(!isPlaying);
+																					}} /> :
+																				<PauseCircle
+																					className={list_styles.play_button}
+																					onClick={() => {
+																						let pid = document.getElementById(`preview-${t}`);
+																						pid.pause();
+																						useIsPlaying(!isPlaying)
+																					}}
+																				/>
+																			)
+																		}
 																	</div>
 																	: <>NONE</>
 															}
@@ -87,7 +99,6 @@ const Music = (props) => {
 						: <h1>Fetch or Server Error, reload for more info</h1>
 					)
 				}
-				{/* </> */}
 			</div>
 		</>
 	);
