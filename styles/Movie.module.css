@@ -1,9 +1,0 @@
-.list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.media_img {
-    margin: 0.2rem;
-}

@@ -25,7 +25,7 @@ const Nav = ({ theme, theme_callback }) => {
 			<ul className={nav_styles.navbar_nav}>
 				<li className={nav_styles.logo}>
 					<Link href="/"><a className={nav_styles.nav_link}>
-						<span className={nav_styles.link_text, nav_styles.logo_text}>Epilan</span>
+						<span className={nav_styles.link_text, nav_styles.logo_text}>DeGraciaV</span>
 						<svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="angle-double-right"
 							role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
 							className="svg-inline--fa fa-angle-double-right fa-w-14 fa-5x">
@@ -58,31 +58,7 @@ const Nav = ({ theme, theme_callback }) => {
 				</li>
 
 				<li className={nav_styles.nav_item}>
-					<Link href="/memes"><a className={nav_styles.nav_link}>
-						<LaughSquint/>
-						<span className={nav_styles.link_text}>Memes</span>
-					</a>
-					</Link>
-				</li>
-
-				<li className={nav_styles.nav_item}>
-					<Link href="/movies"><a className={nav_styles.nav_link}>
-						<TicketAlt/>
-						<span className={nav_styles.link_text}>Movies</span>
-					</a>
-					</Link>
-				</li>
-
-				<li className={nav_styles.nav_item}>
-					<Link href="/music"><a className={nav_styles.nav_link}>
-						<HeadePhonesAlt/>
-						<span className={nav_styles.link_text}>Music</span>
-					</a>
-					</Link>
-				</li>
-
-				<li className={nav_styles.nav_item}>
-					<Link href="https://github.com/gOps132/pt_4th_qtr_epilan"><a className={nav_styles.nav_link}>
+					<Link href="https://github.com/gOps132/v_blog"><a className={nav_styles.nav_link}>
 						<GithubBrandIcon/>
 						<span className={nav_styles.link_text}>Repo</span>
 					</a>

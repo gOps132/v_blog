@@ -1,4 +1,6 @@
 # V_BLOG
+#### Made by gOps132
+
 ### Deployed in Vercel
 ## Getting Started
 
