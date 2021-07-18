@@ -1,8 +1,14 @@
-# PT_4TH_QTR_EPILAN
+# V_BLOG
 ### Deployed in Vercel
 ## Getting Started
 
-### First, run the development server:
+### Install npm packages
+
+```bash
+    npm install
+```
+
+### Run the development server:
 
 ```bash
     npm run dev
